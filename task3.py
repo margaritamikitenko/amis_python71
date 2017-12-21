@@ -1,39 +1,20 @@
-elements = [int(i) for i in input().split()]
+list = [i for i in input().split()]
 
-def groups_find(elements,i,ter,k):
+def function(list):
     """
-    Ця функця повертає найбільшу кількість елементів,
-    що стоять поряд у списку
+    Ця функція повертає список  в зворотньому порядку
     Args:
-        elements: список натуральних чисел
-        i:  чило
-        ter:  чило
-        k: число
+        list: список
     Returns:
-        натуральне число
+        list: дійсне число
     Examples:
-        >>> print(1 2 3 4 4 4 5 6 1 1 1 1 3))
-        4
+        print(1 2 3 4 5 6 7 8 9)
+        9 8 7 6 5 4 3 2 1
     """
-    
-    if i < len(elements)-1 and elements[i] == elements[i+1]:
-        k += 1
-            
-        return groups_find(elements,i+1,ter,k)
-    else :
-        return k,ter
-
-def quantity(elements,i,max_k):
-    
-    if i < len(elements):
-        d = groups_find(elements,i,0,1)
-        if max_k < d[0]:
-            max_k = d[0]
-        return quantity(elements,i+1,max_k)
+    l = len(list)
+    if (l-1) == 0:
+        answer = list[0]
     else:
-        return max_k
-            
-
-
-a = [1,2,3,3,3,3,3,6,6,6,6,6,6,6] 
-print(quantity(elements, 0, 0))
+        answer = str(list[l-1]) +' '+ function(list[:(l-1)])
+    return answer
+print(function(list))
