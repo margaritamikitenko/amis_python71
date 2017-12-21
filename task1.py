@@ -1,24 +1,7 @@
-numbers = [float(i) for i in input().split()]
-
-
-def second_max_number(numbers):
-    """
-    Ця функція повертає другий максимальний елемент
-    Args:
-        numbers: список
-    Returns: дійсне числa
-    Exampples:
-        >>> print(sum_sequence([1 2 3 4 5 6 7 8 9]))
-        8
-        >>> print(sum_sequence([1 2 3 4 5 j 7 8 9]))
-        File "C:/Users/User/Desktop/Python/12/task1.py",
-        line 1, in <listcomp>
-        numbers = [float(i) for i in input().split()]
-        ValueError: could not convert string to float: 'f'
-    """
-    numbers.remove(min(numbers))
-    if len(numbers) == 2:
-        return int(min(numbers))
-    else:
-        return(second_max_number(numbers))
-print(second_max_number(numbers))
+x1 = float(input())
+x2 = float(input())
+y1 = float(input())
+y2 = float(input())#Вводимо по черзі координати двох точок
+def distance(x1, x2, y1, y2):
+    return(((x2-x1)**2+(y2-y1)**2)**0.5)#Функція рахує відстань між точками
+print(distance(x1, x2, y1, y2)) #Виводимо результат
